@@ -7,9 +7,9 @@ from django.http import HttpResponse
 def about_us(request):
     return render(
         request,
-        "about/about.html",
+        "pages/about.html",
     )
 
 
 def home(request):
-    return render(request, 'about/home.html')
+    return render(request, 'pages/home.html')
