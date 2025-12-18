@@ -2,7 +2,13 @@
 {% load static %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
 <h2>Cake Builder</h2>
+{% else %}
+<p>In order to use our awesome Cake Builder App you must first <a href="{% url 'account_login' %}">Login</a></p>
+{% endif %}
+
 {% endblock content %}
 
 {% block extras %}
