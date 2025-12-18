@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def cakebuilder_app(request):
-      return render(request, 'cakebuilder/cakebuilder.html')
+    return render(request, 'cakebuilder/cakebuilder.html')
