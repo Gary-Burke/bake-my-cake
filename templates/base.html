@@ -2,6 +2,7 @@
 
 {% url 'about' as about_url %}
 {% url 'home' as home_url %}
+{% url 'cakebuilder' as cakebuilder_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -55,7 +56,8 @@
                         <a class="nav-link" href="#">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cake Builder</a>
+                        <a class="nav-link {% if request.path == cakebuilder_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'cakebuilder' %}">Cake Builder</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Orders</a>
