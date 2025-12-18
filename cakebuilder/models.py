@@ -37,6 +37,3 @@ class Order(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
-
-    def __str__(self):
-        return f"Customer: {self.customer} | Quote: {self.quote} € | Status: {self.get_status_display()}"
