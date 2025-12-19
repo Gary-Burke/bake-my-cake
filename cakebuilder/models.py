@@ -18,7 +18,7 @@ STATUS = ((1, "Ordered"), (2, "Completed"), (3, "Cancelled"))
 class Order(models.Model):
     """
     Stores the complete cake order for the customer. 
-    Related to :model:`auth.User` and :model:`Delivery.pk`
+    Related to :model:`auth.User` and :model:`Booking.pk`
     """
     customer = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="customer_orders"
@@ -41,10 +41,10 @@ class Order(models.Model):
 
 
 class TimeSlot(models.TextChoices):
-    SLOT_11 = "11:00"
-    SLOT_13 = "13:00"
-    SLOT_15 = "15:00"
-    SLOT_17 = "17:00"
+    SLOT_11 = "11:00", "11:00 AM"
+    SLOT_13 = "13:00", "1:00 PM"
+    SLOT_15 = "15:00", "3:00 PM"
+    SLOT_17 = "17:00", "5:00 PM"
 
 
 class Booking(models.Model):
@@ -52,6 +52,10 @@ class Booking(models.Model):
     time_slot = models.CharField(
         max_length=5,
         choices=TimeSlot.choices
+    )
+    order = models.OneToOneField(
+        Order, on_delete=models.CASCADE, related_name="order_booking",
+        null=True, blank=True
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
