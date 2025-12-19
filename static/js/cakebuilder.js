@@ -64,8 +64,13 @@ $(document).ready(function () {
 
     $("button[data-tier]").on("click", function () {
         order.tier = $(this).data("tier");
-
         console.log(`Tier: ${order.tier}`); // TODO: Delete
+    })
+
+
+    $("button[data-sponge]").on("click", function () {
+        order.sponge = $(this).data("sponge");
+        console.log(`Sponge: ${order.sponge}`); // TODO: Delete
     })
 
 
