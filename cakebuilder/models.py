@@ -17,7 +17,7 @@ STATUS = ((1, "Ordered"), (2, "Completed"), (3, "Cancelled"))
 
 class Order(models.Model):
     """
-    Stores the complete cake order for the customer. 
+    Stores the complete cake order for the customer.
     Related to :model:`auth.User` and :model:`Booking.pk`
     """
     customer = models.ForeignKey(
