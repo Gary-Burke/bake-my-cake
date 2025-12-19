@@ -3,7 +3,7 @@ $(document).ready(function () {
     let order = {
         shape: "",
         size: "",
-        tier: "",
+        tier: 1,
         sponge: "",
         icing: "",
         message: "",
@@ -35,6 +35,9 @@ $(document).ready(function () {
     });
 
 
+    /**
+     * Update order size based on user selection
+     */
     $("button[data-size]").on("click", function () {
         const size = $(this).data("size");
         if (order.shape === "square") {
@@ -59,6 +62,13 @@ $(document).ready(function () {
     })
 
 
+    $("button[data-tier]").on("click", function () {
+        order.tier = $(this).data("tier");
+
+        console.log(`Tier: ${order.tier}`); // TODO: Delete
+    })
+
+
     $("#delivery-date").flatpickr({
         minDate: new Date().fp_incr(7),
         dateFormat: "Y-m-d", // matches Django DateField
@@ -68,6 +78,7 @@ $(document).ready(function () {
             loadTimeSlots(dateStr);
         }
     });
+
 
     function loadTimeSlots(date) {
         $.ajax({
