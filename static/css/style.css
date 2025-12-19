@@ -67,6 +67,13 @@ footer {
     
 }
 
+.modal-btn {
+  border: ridge 2px var(--secondary-color);
+  border-radius: 1rem;
+  background-color: var(--primary-alt-color);
+}
+
+
 #social-icons i {
   width: 2.5rem;
   height: 2.5rem;
