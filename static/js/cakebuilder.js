@@ -1,33 +1,62 @@
-let order = {
-    shape: "",
-    size: "",
-    tier: "",
-    sponge: "",
-    icing: "",
-    message: "",
-    theme: "",
-    colours: "",
-    quote: 0,
-    status: "",
-}
-
 $(document).ready(function () {
 
-    $('button[data-shape]').on('click', function () {
-        const shape = $(this).data('shape');
-        if (shape === 'square') {
-            $('button[data-size="1"]').text('30 x 30cm');
-            $('button[data-size="2"]').text('50 x 50cm');
-        } else if (shape === 'rectangle') {
-            $('button[data-size="1"]').text('50 x 30cm');
-            $('button[data-size="2"]').text('60 x 45cm');
-        } else {
-            $('button[data-size="1"]').text('30cm');
-            $('button[data-size="2"]').text('50cm');
-        }
+    let order = {
+        shape: "",
+        size: "",
+        tier: "",
+        sponge: "",
+        icing: "",
+        message: "",
+        theme: "",
+        colours: "",
+        quote: 0,
+        status: "",
+    }
 
+    /**
+     * Update order shape based on user selection.
+     * Populate order size based on user selection of shape.
+     */
+    $("button[data-shape]").on("click", function () {
+        const shape = $(this).data("shape");
+        if (shape === "square") {
+            $("button[data-size='small']").text("30 x 30cm");
+            $("button[data-size='large']").text("50 x 50cm");
+        } else if (shape === 'rectangle') {
+            $("button[data-size='small']").text("50 x 30cm");
+            $("button[data-size='large']").text("60 x 45cm");
+        } else {
+            $("button[data-size='small']").text("30cm");
+            $("button[data-size='large']").text("50cm");
+        }
+        order.shape = shape;
+
+        console.log(`Shape: ${order.shape}`); // TODO: Delete
     });
 
+
+    $("button[data-size]").on("click", function () {
+        const size = $(this).data("size");
+        if (order.shape === "square") {
+            if (size === "small") {
+                order.size = "30 x 30cm";
+            } else {
+                order.size = "50 x 50cm"
+            }
+        } else if (order.shape === "rectangle") {
+            if (size === "small") {
+                order.size = "50 x 30cm";
+            } else {
+                order.size = "60 x 45cm"
+            }
+        } else if (size === "small") {
+            order.size = "30cm";
+        } else {
+            order.size = "50cm"
+        }
+
+        console.log(`Size: ${order.size}`); // TODO: Delete
+    })
 
 
     $("#delivery-date").flatpickr({
