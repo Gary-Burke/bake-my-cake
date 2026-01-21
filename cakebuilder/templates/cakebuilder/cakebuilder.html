@@ -4,13 +4,13 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+
 
 <div class="container text-center">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h1>Welcome to our Cake Builder App</h1>
-            <button class="btn btn-signup" data-bs-target="#cakeModalStep1" data-bs-toggle="modal">Let's get
+            <button class="btn btn-signup" data-bs-target="#cakeModalShape" data-bs-toggle="modal">Let's get
                 Started!</button>
         </div>
     </div>
@@ -19,47 +19,65 @@
 
 
 <!-- Modal Step 1 Shape -->
-<div class="modal animate__animated animate__slideInLeft" id="cakeModalStep1" aria-hidden="true"
-    aria-labelledby="cakeModalStep1ToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-2 text-center" id="cakeModalStep1ToggleLabel">Build My Cake</h1>
+<div class="modal animate__animated animate__slideInLeft" id="cakeModalShape" aria-hidden="true"
+    aria-labelledby="cakeModalShapeToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered ">
+        <div class="modal-content text-center">
+            <div class="modal-header mx-auto">
+                <h2 class="modal-title" id="cakeModalShapeToggleLabel">Choose your Shape</h2>
+
                 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Choose your Shape (Step 1/6)
-            </div>
-            <div class="container">
-                <div class="row row-cols-3 mb-3 justify-content-evenly">
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep2" data-bs-toggle="modal" data-shape="square">Square</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep2" data-bs-toggle="modal" data-shape="rectangle">Rectangle</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep2" data-bs-toggle="modal" data-shape="round">Round</button>
+                <p>Step 1</p>
+                <div class="container">
+                <div class="row justify-content-evenly">
+
+                    <div class="col-10 col-sm-7 col-md-3 selections" data-bs-target="#cakeModalSize" data-bs-toggle="modal" data-shape="square">                        
+                            <img src="{% static 'images/square.webp' %}" alt="Shape of a square">
+                            <p>Square</p>                        
+                    </div>
+
+                    <div class="col-10 col-sm-7 col-md-3 selections" data-bs-target="#cakeModalSize" data-bs-toggle="modal" data-shape="rectangle">
+                        <img src="{% static 'images/rectangle.webp' %}" alt="Shape of a rectangle">
+                        <p>Rectangle</p>
+                    </div>
+
+                    <div class="col-10 col-sm-7 col-md-3 selections" data-bs-target="#cakeModalSize" data-bs-toggle="modal" data-shape="round">
+                        <img src="{% static 'images/round.webp' %}" alt="Shape of cylinder">
+                        <p>Round</p>
+                    </div>
                 </div>
             </div>
+            </div>
+
+            
             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
 </div>
 
+
 <!-- Modal Step 2 Size -->
-<div class="modal animate__animated animate__slideInLeft" id="cakeModalStep2" aria-hidden="true"
-    aria-labelledby="cakeModalStep2ToggleLabel" tabindex="-1">
+<div class="modal animate__animated animate__slideInLeft" id="cakeModalSize" aria-hidden="true"
+    aria-labelledby="cakeModalSizeToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-2" id="cakeModalStep2ToggleLabel">Build My Cake</h1>
+                <h2 class="modal-title " id="cakeModalSizeToggleLabel">Choose your Size</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Choose your Size (Step 2/6)
+                Step 2
             </div>
             <div class="container">
                 <div class="row row-cols-2 mb-3 justify-content-evenly">
-                    <button class="col-4 modal-btn" data-bs-target="#cakeModalStep3" data-bs-toggle="modal" data-size="small"></button>
-                    <button class="col-4 modal-btn" data-bs-target="#cakeModalStep3" data-bs-toggle="modal" data-size="large"></button>                    
+                    <button class="col-4 modal-btn" data-bs-target="#cakeModalTiers" data-bs-toggle="modal"
+                        data-size="small"></button>
+                    <button class="col-4 modal-btn" data-bs-target="#cakeModalTiers" data-bs-toggle="modal"
+                        data-size="large"></button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -69,12 +87,12 @@
 </div>
 
 <!-- Modal Step 3 Tiers-->
-<div class="modal animate__animated animate__slideInLeft" id="cakeModalStep3" aria-hidden="true"
-    aria-labelledby="cakeModalStep3ToggleLabel" tabindex="-1">
+<div class="modal animate__animated animate__slideInLeft" id="cakeModalTiers" aria-hidden="true"
+    aria-labelledby="cakeModalTiersToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-2" id="cakeModalStep3ToggleLabel">Build My Cake</h1>
+                <h2 class="modal-title " id="cakeModalTiersToggleLabel">Build My Cake</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -82,9 +100,12 @@
             </div>
             <div class="container">
                 <div class="row row-cols-3 mb-3 justify-content-evenly">
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep4" data-bs-toggle="modal" data-tier="1">One</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep4" data-bs-toggle="modal" data-tier="2">Two</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep4" data-bs-toggle="modal" data-tier="3">Three</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalSponge" data-bs-toggle="modal"
+                        data-tier="1">One</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalSponge" data-bs-toggle="modal"
+                        data-tier="2">Two</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalSponge" data-bs-toggle="modal"
+                        data-tier="3">Three</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -94,12 +115,12 @@
 </div>
 
 <!-- Modal Step 4 Sponge -->
-<div class="modal animate__animated animate__slideInLeft" id="cakeModalStep4" aria-hidden="true"
-    aria-labelledby="cakeModalStep4ToggleLabel" tabindex="-1">
+<div class="modal animate__animated animate__slideInLeft" id="cakeModalSponge" aria-hidden="true"
+    aria-labelledby="cakeModalSpongeToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-2" id="cakeModalStep4ToggleLabel">Build My Cake</h1>
+                <h2 class="modal-title " id="cakeModalSpongeToggleLabel">Build My Cake</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -107,13 +128,18 @@
             </div>
             <div class="container">
                 <div class="row row-cols-3 mb-3 justify-content-evenly">
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep5" data-bs-toggle="modal" data-sponge="vanilla">Vanilla</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep5" data-bs-toggle="modal" data-sponge="chocolate">Chocolate</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep5" data-bs-toggle="modal" data-sponge="coffee">Coffee</button>                    
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalIcing" data-bs-toggle="modal"
+                        data-sponge="vanilla">Vanilla</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalIcing" data-bs-toggle="modal"
+                        data-sponge="chocolate">Chocolate</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalIcing" data-bs-toggle="modal"
+                        data-sponge="coffee">Coffee</button>
                 </div>
                 <div class="row row-cols-2 mb-3 justify-content-evenly">
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep5" data-bs-toggle="modal" data-sponge="carrot">Carrot</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep5" data-bs-toggle="modal" data-sponge="lemon">Lemon</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalIcing" data-bs-toggle="modal"
+                        data-sponge="carrot">Carrot</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalIcing" data-bs-toggle="modal"
+                        data-sponge="lemon">Lemon</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -123,12 +149,12 @@
 </div>
 
 <!-- Modal Step 5 Icing -->
-<div class="modal animate__animated animate__slideInLeft" id="cakeModalStep5" aria-hidden="true"
-    aria-labelledby="cakeModalStep5ToggleLabel" tabindex="-1">
+<div class="modal animate__animated animate__slideInLeft" id="cakeModalIcing" aria-hidden="true"
+    aria-labelledby="cakeModalIcingToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-2" id="cakeModalStep5ToggleLabel">Build My Cake</h1>
+                <h2 class="modal-title " id="cakeModalIcingToggleLabel">Build My Cake</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -136,13 +162,18 @@
             </div>
             <div class="container">
                 <div class="row row-cols-3 mb-3 justify-content-evenly">
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal" data-icing="buttercream">Buttercream</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal" data-icing="ganache">Ganache</button>
-                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal" data-icing="fondant">Fondant</button>                    
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal"
+                        data-icing="buttercream">Buttercream</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal"
+                        data-icing="ganache">Ganache</button>
+                    <button class="col-3 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal"
+                        data-icing="fondant">Fondant</button>
                 </div>
                 <div class="row row-cols-2 mb-3 justify-content-evenly">
-                    <button class="col-4 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal" data-icing="royal-icing">Royal Icing</button>
-                    <button class="col-4 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal" data-icing="cream-cheese">Cream Cheese</button>
+                    <button class="col-4 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal"
+                        data-icing="royal-icing">Royal Icing</button>
+                    <button class="col-4 modal-btn" data-bs-target="#cakeModalStep6" data-bs-toggle="modal"
+                        data-icing="cream-cheese">Cream Cheese</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -157,7 +188,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-2" id="cakeModalStep6ToggleLabel">Build My Cake</h1>
+                <h2 class="modal-title " id="cakeModalStep6ToggleLabel">Build My Cake</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -189,7 +220,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-2" id="cakeModalQuoteToggleLabel">Build My Cake</h1>
+                <h2 class="modal-title " id="cakeModalQuoteToggleLabel">Build My Cake</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -200,12 +231,13 @@
                     <form method="post">
                         {{ my_form | crispy }}
                         {% csrf_token %}
-                        <button id="submitButton" type="submit" class="btn-signup" data-bs-target="#cakeModalDate" data-bs-toggle="modal">Accept Quote</button>
+                        <button id="submitButton" type="submit" class="btn-signup" data-bs-target="#cakeModalDate"
+                            data-bs-toggle="modal">Accept Quote</button>
                     </form>
                 </div>
             </div>
             <div class="modal-footer">
-                
+
             </div>
         </div>
     </div>
@@ -217,7 +249,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-2" id="cakeModalDateToggleLabel">Delivery Date</h1>
+                <h2 class="modal-title " id="cakeModalDateToggleLabel">Delivery Date</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -236,20 +268,7 @@
 
 
 
-{% else %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-5 offset-md-2">
-            <h3>Login Required</h3>
-            <p class="lead">In order to use our awesome Cake Builder App<br>
-                you need to first <a href="{% url 'account_login' %}">Login</a>
-            </p>
-        </div>
-    </div>
-</div>
-
-{% endif %}
 
 {% endblock content %}
 

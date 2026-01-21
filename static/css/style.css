@@ -12,6 +12,58 @@
   --alt-color: #cdb4db;
 }
 
+
+
+/* Cake Builder Page */
+.selections {
+  border: 1px solid black;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.selections:hover {
+  border: 1px solid blue;
+}
+
+/* .selections p {
+  border: 1px solid blue;
+} */
+
+.selections img {
+  width: 150px;
+  height: 150px;
+  /* border: 1px solid red; */
+  margin-top: 1rem;
+}
+
+/* Medium screen sizes - 768px up*/
+@media screen and (min-width: 768px) {
+  .selections img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* Large screen sizes - 992px up*/
+@media screen and (min-width: 992px) {
+  .selections img {
+    width: 165px;
+    height: 165px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 body {
   font-family: var(--primary-font);
 }
@@ -31,7 +83,7 @@ nav {
 }
 
 .logo {
-    height: 40px;
+  height: 40px;
 }
 
 footer {
@@ -51,20 +103,20 @@ footer {
 }
 
 .slot-btn {
-    margin: 1rem 0.5rem;
-    padding: 0.4rem 0.7rem;
-    border-radius: 0.8rem;
-    background-color: var(--primary-alt-color);
+  margin: 1rem 0.5rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.8rem;
+  background-color: var(--primary-alt-color);
 }
 
 .slot-btn.disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .slot-btn.selected {
-    background-color: var(--secondary-color);
-    
+  background-color: var(--secondary-color);
+
 }
 
 .modal-btn {
