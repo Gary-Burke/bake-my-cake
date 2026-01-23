@@ -3,11 +3,15 @@
   --body-font: "Source Sans 3", sans-serif;
   --heading-font: "Playfair Display", serif;
 
-  --primary-color: #6D7A71;
-  --secondary-color: #CAB881;
-  --highlight-color: #D7CCB5;
-  --primary-text-color: #ffffff;
+  --primary-color: #69776e;
+  --secondary-color: #c9c1a6;
 
+  --alt-color: #b7d8f5;
+
+  --highlight-color: #FED8A6;
+  --primary-text-color: #FFF9F5;
+
+  --body-text-color: #101720;
 }
 
 
@@ -54,6 +58,7 @@
 
 body {
   font-family: var(--body-font);
+  color: var(--body-text-color);
 }
 
 h1,
@@ -63,6 +68,10 @@ h2 {
 
 nav {
   background-color: var(--primary-color);
+}
+
+#nav-top {
+  min-height: 70px;
 }
 
 .nav-link {
@@ -108,7 +117,7 @@ nav {
 
 
 .btn-signup {
-  background-color: var(--secondary-color);
+  background-color: var(--alt-color);
   border-radius: 0.8rem;
   border: 2px outset black;
 }
