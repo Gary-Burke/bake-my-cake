@@ -1,13 +1,13 @@
 let cake = {
-    roundSmall: "Small Ø15cm (serves 6-8)",
-    roundMedium: "Medium Ø20cm (serves 8-10)",
-    roundLarge: "Large Ø25cm (serves 10-15)",
-    squareSmall: "Small 15 x 15cm (serves 6-8)",
-    squareMedium: "Medium 20 x 20cm (serves 8-10)",
-    squareLarge: "Large 25 x 25cm (serves 10-15)",
-    rectangleSmall: "Small 20 x 15cm (serves 6-8)",
-    rectangleMedium: "Medium 25 x 20cm (serves 8-10)",
-    rectangleLarge: "Large 30 x 25cm (serves 10-15)",
+    roundSmall: "Small Ø15cm",
+    roundMedium: "Medium Ø20cm",
+    roundLarge: "Large Ø25cm",
+    squareSmall: "Small 15 x 15cm",
+    squareMedium: "Medium 20 x 20cm",
+    squareLarge: "Large 25 x 25cm",
+    rectangleSmall: "Small 20 x 15cm",
+    rectangleMedium: "Medium 25 x 20cm",
+    rectangleLarge: "Large 30 x 25cm",
 }
 
 // Wait for the DOM to load before executing functions

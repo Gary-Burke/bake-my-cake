@@ -21,9 +21,9 @@
             <div class="modal-body">
 
                 <form id="cake-form" class="container" action="">
-                    <div class="row justify-content-between align-items-center">
+                    <div class="row justify-content-evenly align-items-center">
 
-                        <fieldset class="col-12 col-sm-8 col-md-4" id="field-shape">
+                        <fieldset class="col-10 col-md-5 col-lg-3 mx-2" id="field-shape">
                             <legend>Shape</legend>
                             <input type="radio" name="shape" id="shape-square" value="square">
                             <label for="shape-square">Square</label><br>
@@ -33,7 +33,7 @@
                             <label for="shape-rectangle">Rectangle</label>
                         </fieldset>
 
-                        <fieldset class="col-12 col-sm-8 col-md-4 mt-2" id="field-tier">
+                        <fieldset class="col-10 col-md-5 col-lg-3 mx-2" id="field-tier">
                             <legend>Tiers</legend>
                             <input type="radio" name="tier" id="tier-one" value="one" checked>
                             <label for="tier-one">One</label><br>
@@ -43,18 +43,28 @@
                             <label for="tier-three">Three</label>
                         </fieldset>
 
-                        <fieldset class="col-12 col-sm-8 col-md-7 mt-2 mt-md-0" id="field-size">
+                        <fieldset class="col-10 col-md-5 col-lg-3 mx-2" id="field-size">
                             <legend>Base Size</legend>
                             <input type="radio" name="size" id="size-small" value="small">
-                            <label for="size-small">Small Ø15cm (serves 6-8)</label><br>
+                            <label for="size-small">Small Ø15cm</label><br>
                             <input type="radio" name="size" id="size-medium" value="medium" checked>
-                            <label for="size-medium">Medium Ø20cm (serves 8-10)</label><br>
+                            <label for="size-medium">Medium Ø20cm</label><br>
                             <input type="radio" name="size" id="size-large" value="large">
-                            <label for="size-large">Large Ø25cm (serves 10-15)</label>
+                            <label for="size-large">Large Ø25cm</label>
                         </fieldset>
 
-                        
+                        <fieldset class="col-10 col-md-5 col-lg-3 mx-2" id="field-sponge">
+                            <legend>Sponge</legend>
+                            <input type="radio" name="sponge" id="sponge-square" value="square">
+                            <label for="sponge-square">Square</label><br>
+                            <input type="radio" name="sponge" id="sponge-round" value="round" checked>
+                            <label for="sponge-round">Round</label><br>
+                            <input type="radio" name="sponge" id="sponge-rectangle" value="rectangle">
+                            <label for="sponge-rectangle">Rectangle</label>
+                        </fieldset>
 
+
+                        
                     </div>
                 </form>
 
