@@ -11,7 +11,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="cake-modal" tabindex="-1" aria-labelledby="cake-modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title fs-3" id="cake-modalLabel">Cake Configurator</h1>
@@ -33,16 +33,6 @@
                             <label for="shape-rectangle">Rectangle</label>
                         </fieldset>
 
-                        <fieldset class="col-12 col-sm-8 col-md-7 mt-2 mt-md-0" id="field-size">
-                            <legend>Size</legend>
-                            <input type="radio" name="size" id="size-small" value="small">
-                            <label for="size-small">Small Ø15cm (serves 6-8)</label><br>
-                            <input type="radio" name="size" id="size-medium" value="medium" checked>
-                            <label for="size-medium">Medium Ø20cm (serves 8-10)</label><br>
-                            <input type="radio" name="size" id="size-large" value="large">
-                            <label for="size-large">Large Ø25cm (serves 10-15)</label>
-                        </fieldset>
-
                         <fieldset class="col-12 col-sm-8 col-md-4 mt-2" id="field-tier">
                             <legend>Tiers</legend>
                             <input type="radio" name="tier" id="tier-one" value="one" checked>
@@ -52,6 +42,18 @@
                             <input type="radio" name="tier" id="tier-three" value="three">
                             <label for="tier-three">Three</label>
                         </fieldset>
+
+                        <fieldset class="col-12 col-sm-8 col-md-7 mt-2 mt-md-0" id="field-size">
+                            <legend>Base Size</legend>
+                            <input type="radio" name="size" id="size-small" value="small">
+                            <label for="size-small">Small Ø15cm (serves 6-8)</label><br>
+                            <input type="radio" name="size" id="size-medium" value="medium" checked>
+                            <label for="size-medium">Medium Ø20cm (serves 8-10)</label><br>
+                            <input type="radio" name="size" id="size-large" value="large">
+                            <label for="size-large">Large Ø25cm (serves 10-15)</label>
+                        </fieldset>
+
+                        
 
                     </div>
                 </form>
