@@ -4,33 +4,70 @@
 {% block content %}
 
 
-<form id="cake-form" class="container mt-3 p-3" action="">
-    <div class="row justify-content-evenly align-items-center">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cake-modal">
+    Launch demo modal
+</button>
 
-        <fieldset class="col-2 p-2" id="field-shape">
-            <legend>Shape</legend>
-            <input type="radio" name="shape" id="shape-square" value="square">
-            <label for="shape-square">Square</label><br>
-            <input type="radio" name="shape" id="shape-round" value="round">
-            <label for="shape-round">Round</label><br>
-            <input type="radio" name="shape" id="shape-rectangle" value="rectangle">
-            <label for="shape-rectangle">Rectangle</label>
-        </fieldset>
+<!-- Modal -->
+<div class="modal fade" id="cake-modal" tabindex="-1" aria-labelledby="cake-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-3" id="cake-modalLabel">Cake Configurator</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-        <fieldset class="col-2 p-2" id="field-size">
-            <legend>Size</legend>
-            <input type="radio" name="size" id="size-small" value="small">
-            <label for="size-small">Small</label><br>
-            <input type="radio" name="size" id="size-medium" value="medium">
-            <label for="size-medium">Medium</label><br>
-            <input type="radio" name="size" id="size-large" value="large">
-            <label for="size-large">Large</label>
-        </fieldset>
+            <div class="modal-body">
 
+                <form id="cake-form" class="container" action="">
+                    <div class="row justify-content-between align-items-center">
 
+                        <fieldset class="col-12 col-sm-8 col-md-4" id="field-shape">
+                            <legend>Shape</legend>
+                            <input type="radio" name="shape" id="shape-square" value="square">
+                            <label for="shape-square">Square</label><br>
+                            <input type="radio" name="shape" id="shape-round" value="round" checked>
+                            <label for="shape-round">Round</label><br>
+                            <input type="radio" name="shape" id="shape-rectangle" value="rectangle">
+                            <label for="shape-rectangle">Rectangle</label>
+                        </fieldset>
 
+                        <fieldset class="col-12 col-sm-8 col-md-7 mt-2 mt-md-0" id="field-size">
+                            <legend>Size</legend>
+                            <input type="radio" name="size" id="size-small" value="small">
+                            <label for="size-small">Small Ø15cm (serves 6-8)</label><br>
+                            <input type="radio" name="size" id="size-medium" value="medium" checked>
+                            <label for="size-medium">Medium Ø20cm (serves 8-10)</label><br>
+                            <input type="radio" name="size" id="size-large" value="large">
+                            <label for="size-large">Large Ø25cm (serves 10-15)</label>
+                        </fieldset>
+
+                        <fieldset class="col-12 col-sm-8 col-md-4 mt-2" id="field-tier">
+                            <legend>Tiers</legend>
+                            <input type="radio" name="tier" id="tier-one" value="one" checked>
+                            <label for="tier-one">One</label><br>
+                            <input type="radio" name="tier" id="tier-two" value="two">
+                            <label for="tier-two">Two</label><br>
+                            <input type="radio" name="tier" id="tier-three" value="three">
+                            <label for="tier-three">Three</label>
+                        </fieldset>
+
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
-</form>
+</div>
+
+
+
 
 
 {% endblock content %}

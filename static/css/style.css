@@ -15,20 +15,15 @@
 }
 
 
-#cake-form {
-  border: 2px solid var(--primary-color);
-  border-radius: 0.5rem;
-}
-
 fieldset {
   border: 1px solid var(--primary-color);
   border-radius: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 legend {
   float: none;
   padding: 0px 0.25rem;
-  margin-bottom: -0.5rem;
   width: fit-content;
 }
 
