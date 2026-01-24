@@ -8,34 +8,25 @@ let cake = {
     rectangleSmall: "Small 20 x 15cm",
     rectangleMedium: "Medium 25 x 20cm",
     rectangleLarge: "Large 30 x 25cm",
-}
+};
 
 // Wait for the DOM to load before executing functions
 document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("field-shape").addEventListener("change", function (e) {
         if (e.target.value === "round") {
-            const labelSmall = document.querySelector('label[for="size-small"]');
-            labelSmall.textContent = cake.roundSmall;
-            const labelMedium = document.querySelector('label[for="size-medium"]');
-            labelMedium.textContent = cake.roundMedium;
-            const labelLarge = document.querySelector('label[for="size-large"]');
-            labelLarge.textContent = cake.roundLarge;
+            document.querySelector('label[for="size-small"]').textContent = cake.roundSmall;
+            document.querySelector('label[for="size-medium"]').textContent = cake.roundMedium;
+            document.querySelector('label[for="size-large"]').textContent = cake.roundLarge;
         } else {
             if (e.target.value === "square") {
-                const labelSmall = document.querySelector('label[for="size-small"]');
-                labelSmall.textContent = cake.squareSmall;
-                const labelMedium = document.querySelector('label[for="size-medium"]');
-                labelMedium.textContent = cake.squareMedium;
-                const labelLarge = document.querySelector('label[for="size-large"]');
-                labelLarge.textContent = cake.squareLarge;
+                document.querySelector('label[for="size-small"]').textContent = cake.squareSmall;
+                document.querySelector('label[for="size-medium"]').textContent = cake.squareMedium;
+                document.querySelector('label[for="size-large"]').textContent = cake.squareLarge;
             } else {
-                const labelSmall = document.querySelector('label[for="size-small"]');
-                labelSmall.textContent = cake.rectangleSmall;
-                const labelMedium = document.querySelector('label[for="size-medium"]');
-                labelMedium.textContent = cake.rectangleMedium;
-                const labelLarge = document.querySelector('label[for="size-large"]');
-                labelLarge.textContent = cake.rectangleLarge;
+                document.querySelector('label[for="size-small"]').textContent = cake.rectangleSmall;
+                document.querySelector('label[for="size-medium"]').textContent = cake.rectangleMedium;
+                document.querySelector('label[for="size-large"]').textContent = cake.rectangleLarge;
             }
         }
     });
