@@ -1,19 +1,25 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lato&display=swap');
-
 /* CSS Variables */
+
 :root {
-  --primary-font: "Lato", sans-serif;
-  --heading-font: "Imperial Script", cursive;
-  --primary-color: #99ceff;
-  --primary-alt-color: #bde0fe;
-  --secondary-color: #ffafcc;
-  --secondary-alt-color: #ffc8dd;
-  --alt-color: #cdb4db;
+  --body-font: "Source Sans 3", sans-serif;
+  --heading-font: "Playfair Display", serif;
+
+  --primary-color: #69776e;
+  --secondary-color: #c9c1a6;
+
+  --alt-color: #DEE2E6;
+
+  --highlight-color: #FED8A6;
+  --primary-text-color: #FFF9F5;
+
+  --body-text-color: #101720;
 }
 
+/* General CSS */
+
 body {
-  font-family: var(--primary-font);
+  font-family: var(--body-font);
+  color: var(--body-text-color);
 }
 
 h1,
@@ -21,50 +27,87 @@ h2 {
   font-family: var(--heading-font);
 }
 
-nav,
-footer {
-  background-color: var(--primary-alt-color);
-}
+/* Navbar */
 
 nav {
-  box-shadow: 0 2px 4px #3a3a3a;
+  background-color: var(--primary-color);
 }
 
-footer {
-  box-shadow: 0 -2px 4px #3a3a3a;
+#nav-top {
+  min-height: 4.5rem;
 }
 
-.btn-signup {
-  background-color: var(--secondary-color);
+.nav-link {
+  font-family: var(--heading-font);
+  font-size: 20px;
+  color: var(--primary-text-color);
+  position: relative;
 }
 
-.btn-signup:hover {
-  background-color: none;
-  border: 1px solid var(--secondary-color);
-
+.nav-link:hover {
+  color: var(--highlight-color);
 }
 
-#social-icons i {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background: var(--secondary-color);
-  color: black;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin: 0rem 0.4rem;
+.navbar-nav .nav-link.active {
+  color: var(--highlight-color);
 }
 
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  width: 60%;
+  height: 2px;
+  background-color: var(--highlight-color);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-item:hover .nav-link::after,
+.navbar-nav .nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.logo {
+  height: 4.5rem;
+}
+
+/* Cake Config Modal */
+
+fieldset {
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+legend {
+  float: none;
+  padding: 0px 0.25rem;
+  width: fit-content;
+}
+
+#cake-form input[type="radio"] {
+  accent-color: var(--primary-color);
+
+}
 
 /* Media Queries*/
 
-/* X-small screen sizes - up to 380px*/
-@media screen and (max-width: 380px) {
+/* Medium screen sizes - 768px up*/
 
-  footer address,
-  footer p {
-    font-size: 0.9rem;
+@media screen and (min-width: 768px) {
+  #field-size {
+    padding-bottom: 2rem;
+  }
+}
+
+/* Large screen sizes - 992px up*/
+
+@media screen and (min-width: 992px) {
+  #field-size {
+    padding-bottom: 0.5rem;
   }
 }
